@@ -184,14 +184,17 @@
     },
     "typescript": {
       "command": "typescript-language-server",
-      "args": ["--stdio"]
+      "args": ["--stdio"],
+      "enabled": true
     },
     "python": {
       "command": "python-language-server",
-      "args": ["--stdio"]
+      "args": ["--stdio"],
+      "enabled": true
     },
     "rust": {
-      "command": "rust-analyzer"
+      "command": "rust-analyzer",
+      "enabled": true
     }
   },
 
