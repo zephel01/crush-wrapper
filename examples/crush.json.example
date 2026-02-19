@@ -1,0 +1,242 @@
+{
+  "$schema": "https://charm.land/crush.json",
+
+  // ===============================
+  // プロバイダー設定
+  // ===============================
+  "providers": {
+    // ===============================
+    // LM Studio (OpenAI-compatible)
+    // ===============================
+    "lmstudio": {
+      "type": "openai-compat",
+      "name": "LM Studio",
+      "base_url": "http://localhost:1234/v1/",
+      "models": [
+        {
+          "id": "glm47",
+          "name": "GLM-4.7-Flash-Uncen-Hrt-NEO-CODE-MAX-imat-D_AU-Q4_K_M",
+          "context_window": 128000,
+          "default_max_tokens": 8000
+        },
+        {
+          "id": "qwen3",
+          "name": "Qwen3-Coder-Next-Q3_K_M",
+          "context_window": 128000,
+          "default_max_tokens": 8000
+        }
+      ]
+    },
+
+    // ===============================
+    // Ollama (OpenAI-compatible)
+    // ===============================
+    "ollama": {
+      "type": "openai-compat",
+      "name": "Ollama",
+      "base_url": "http://localhost:11434/v1/",
+      "models": [
+        {
+          "id": "glm47",
+          "name": "glm-4.7-flash-neo-code-max:q4_k_m",
+          "context_window": 128000,
+          "default_max_tokens": 8000
+        },
+        {
+          "id": "qwen3",
+          "name": "qwen3-coder-next:q3_k_m",
+          "context_window": 128000,
+          "default_max_tokens": 8000
+        }
+      ]
+    },
+
+    // ===============================
+    // Anthropic (Claude)
+    // ===============================
+    "anthropic": {
+      "type": "anthropic",
+      "name": "Anthropic",
+      "api_key": "$ANTHROPIC_API_KEY",
+      "models": [
+        {
+          "id": "claude-sonnet-4-20250514",
+          "name": "Claude Sonnet 4",
+          "cost_per_1m_in": 3,
+          "cost_per_1m_out": 15,
+          "cost_per_1m_in_cached": 3.75,
+          "cost_per_1m_out_cached": 0.3,
+          "context_window": 200000,
+          "default_max_tokens": 8192,
+          "can_reason": true,
+          "supports_attachments": true
+        }
+      ]
+    },
+
+    // ===============================
+    // OpenAI
+    // ===============================
+    "openai": {
+      "type": "openai",
+      "name": "OpenAI",
+      "api_key": "$OPENAI_API_KEY",
+      "models": [
+        {
+          "id": "gpt-4o",
+          "name": "GPT-4o",
+          "cost_per_1m_in": 2.5,
+          "cost_per_1m_out": 10,
+          "context_window": 128000,
+          "default_max_tokens": 4096,
+          "supports_attachments": true
+        }
+      ]
+    },
+
+    // ===============================
+    // Google Gemini
+    // ===============================
+    "google": {
+      "type": "google",
+      "name": "Google",
+      "api_key": "$GOOGLE_API_KEY",
+      "models": [
+        {
+          "id": "gemini-2.0-flash-exp",
+          "name": "Gemini 2.0 Flash",
+          "context_window": 1000000,
+          "default_max_tokens": 8192
+        }
+      ]
+    },
+
+    // ===============================
+    // Groq
+    // ===============================
+    "groq": {
+      "type": "openai-compat",
+      "name": "Groq",
+      "base_url": "https://api.groq.com/openai/v1",
+      "api_key": "$GROQ_API_KEY",
+      "models": [
+        {
+          "id": "llama-3.3-70b-versatile",
+          "name": "Llama 3.3 70B Versatile",
+          "cost_per_1m_in": 0.59,
+          "cost_per_1m_out": 0.59,
+          "context_window": 128000,
+          "default_max_tokens": 8192
+        }
+      ]
+    },
+
+    // ===============================
+    // DeepSeek
+    // ===============================
+    "deepseek": {
+      "type": "openai-compat",
+      "name": "DeepSeek",
+      "base_url": "https://api.deepseek.com/v1",
+      "api_key": "$DEEPSEEK_API_KEY",
+      "models": [
+        {
+          "id": "deepseek-chat",
+          "name": "Deepseek V3",
+          "cost_per_1m_in": 0.27,
+          "cost_per_1m_out": 1.1,
+          "cost_per_1m_in_cached": 0.07,
+          "cost_per_1m_out_cached": 1.1,
+          "context_window": 64000,
+          "default_max_tokens": 5000
+        }
+      ]
+    },
+
+    // ===============================
+    // OpenRouter
+    // ===============================
+    "openrouter": {
+      "type": "openai-compat",
+      "name": "OpenRouter",
+      "base_url": "https://openrouter.ai/api/v1",
+      "api_key": "$OPENROUTER_API_KEY",
+      "models": [
+        {
+          "id": "anthropic/claude-sonnet-4",
+          "name": "Claude Sonnet 4",
+          "cost_per_1m_in": 3,
+          "cost_per_1m_out": 15,
+          "context_window": 200000,
+          "default_max_tokens": 8192
+        }
+      ]
+    }
+  },
+
+  // ===============================
+  // LSP設定（Language Server Protocol）
+  // ===============================
+  "lsp": {
+    "go": {
+      "command": "gopls",
+      "enabled": true
+    },
+    "typescript": {
+      "command": "typescript-language-server",
+      "args": ["--stdio"]
+    },
+    "python": {
+      "command": "python-language-server",
+      "args": ["--stdio"]
+    },
+    "rust": {
+      "command": "rust-analyzer"
+    }
+  },
+
+  // ===============================
+  // MCP設定（Model Context Protocol）
+  // ===============================
+  "mcp": {
+    "filesystem": {
+      "type": "stdio",
+      "command": "npx",
+      "args": ["-y", "@modelcontextprotocol/server-filesystem", "/path/to/allowed/files"],
+      "timeout": 120,
+      "disabled": false
+    }
+  },
+
+  // ===============================
+  // オプション設定
+  // ===============================
+  "options": {
+    "debug": false,
+    "debug_lsp": false,
+    "disable_provider_auto_update": false,
+    "disable_metrics": false,
+    "disabled_tools": [],
+    "allowed_tools": [],
+    "skills_paths": [
+      "~/.config/crush/skills"
+    ],
+    "initialize_as": "AGENTS.md",
+    "attribution": {
+      "trailer_style": "assisted-by",
+      "generated_with": true
+    }
+  },
+
+  // ===============================
+  // 権限設定
+  // ===============================
+  "permissions": {
+    "allowed_tools": [
+      "view",
+      "ls",
+      "grep",
+      "edit"
+    ]
+  }
+}

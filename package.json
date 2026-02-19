@@ -1,0 +1,25 @@
+{
+  "name": "crush-wrapper",
+  "version": "1.0.0",
+  "description": "Crush crush.json 設定作成ツール（非エンジニア向け）",
+  "main": "lib/cli.js",
+  "bin": {
+    "crush-wrapper": "./bin/crush-wrapper"
+  },
+  "scripts": {
+    "start": "node lib/cli.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "crush",
+    "llm",
+    "config",
+    "cli",
+    "charmbracelet"
+  ],
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "inquirer": "^8.2.0"
+  }
+}
