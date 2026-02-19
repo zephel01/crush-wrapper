@@ -1,5 +1,44 @@
+# Dependencies
 node_modules/
+
+# Serena AI agent files
+.serena/
+
+# Logs
 *.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+lerna-debug.log*
+
+# Environment variables
+.env
+.env.local
+.env.development
+.env.test
+.env.production
+
+# OS specific
 .DS_Store
+Thumbs.db
+
+# Backup files
 *.bak
+
+# User config files
 crush.json
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# Test coverage
+coverage/
+.nyc_output/
+
+# Build output
+dist/
+build/

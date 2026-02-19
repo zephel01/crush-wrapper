@@ -198,8 +198,8 @@ Crushを起動するには以下を実行してください:
       "base_url": "http://localhost:1234/v1/",
       "models": [
         {
-          "id": "glm47",
-          "name": "GLM-4.7-Flash-Uncen-Hrt-NEO-CODE-MAX-imat-D_AU-Q4_K_M",
+          "id": "lmstudio",
+          "name": "llama-3.3-70b",
           "context_window": 128000,
           "default_max_tokens": 8000
         }

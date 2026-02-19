@@ -14,13 +14,13 @@
       "base_url": "http://localhost:1234/v1/",
       "models": [
         {
-          "id": "glm47",
+          "id": "lmstudio",
           "name": "GLM-4.7-Flash-Uncen-Hrt-NEO-CODE-MAX-imat-D_AU-Q4_K_M",
           "context_window": 128000,
           "default_max_tokens": 8000
         },
         {
-          "id": "qwen3",
+          "id": "lmstudio",
           "name": "Qwen3-Coder-Next-Q3_K_M",
           "context_window": 128000,
           "default_max_tokens": 8000
@@ -37,13 +37,13 @@
       "base_url": "http://localhost:11434/v1/",
       "models": [
         {
-          "id": "glm47",
+          "id": "ollama",
           "name": "glm-4.7-flash-neo-code-max:q4_k_m",
           "context_window": 128000,
           "default_max_tokens": 8000
         },
         {
-          "id": "qwen3",
+          "id": "ollama",
           "name": "qwen3-coder-next:q3_k_m",
           "context_window": 128000,
           "default_max_tokens": 8000

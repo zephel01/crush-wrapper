@@ -215,14 +215,8 @@ crush.json.2026-02-06_12-34-56.bak
       "base_url": "http://localhost:1234/v1/",
       "models": [
         {
-          "id": "glm47",
-          "name": "GLM-4.7-Flash-Uncen-Hrt-NEO-CODE-MAX-imat-D_AU-Q4_K_M",
-          "context_window": 128000,
-          "default_max_tokens": 8000
-        },
-        {
-          "id": "qwen3",
-          "name": "Qwen3-Coder-Next-Q3_K_M",
+          "id": "lmstudio",
+          "name": "llama-3.3-70b",
           "context_window": 128000,
           "default_max_tokens": 8000
         }
@@ -236,7 +230,8 @@ crush.json.2026-02-06_12-34-56.bak
     },
     "typescript": {
       "command": "typescript-language-server",
-      "args": ["--stdio"]
+      "args": ["--stdio"],
+      "enabled": true
     }
   }
 }
